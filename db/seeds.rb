@@ -14,7 +14,8 @@ Event.destroy_all
                 title: Faker::Lorem.paragraph_by_chars(number: rand(5..140)),
                 description: Faker::Lorem.paragraph_by_chars(number: rand(20..1000)),
                 price: rand(1..1000),
-                location: Faker::Address.city)
+                location: Faker::Address.city,
+                admin: User.all.sample)
 end
 
 Attendance.destroy_all

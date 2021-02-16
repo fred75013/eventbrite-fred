@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @admin.first_name %> et bienvenue chez nous !</h1>
+    <p>
+      Il y a un nouveau participant à ton évènement <%= @event.title %>.
+    </p>
+    <p>
+      Il y a donc désormais <%= @event.users.count %> participants à ton évènement.
+    </p>
+    <p> Allez, bisous ! </p>
+  </body>
+</html>
