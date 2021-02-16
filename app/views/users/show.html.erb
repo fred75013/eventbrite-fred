@@ -1,0 +1,16 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="user_profil">
+  <div>
+    <img src="https://picsum.photos/id/1011/610/320" alt="img" style="border-radius:5px;">
+  </div>
+
+  <div class="ml-3 mt-3 fs-3">
+    <p>Nom : <span class="text-secondary fs-4"><%=current_user.first_name%> <%=current_user.last_name%></span> </p> 
+    <p>Email : <span class="text-secondary fs-4"><%=current_user.email%></span></p>
+    <p>Description : <span class="text-secondary fs-4 font-italic">"<%=current_user.description%>"</span></p>
+  </div> 
+</div>
+<a href="/" class="btn btn-outline-secondary">Retour à l'accueil</a></p></div>
+<%= link_to "Edit email / password", edit_user_registration_path , class: "btn btn-outline-secondary" %>
