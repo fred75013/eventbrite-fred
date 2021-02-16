@@ -1,2 +1,37 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
+
+<div class = "text-center mt-5 fs-3">
+titre
+<p><%= @event.title %></p>
+start date
+<p><%= @event.start_date %></p>
+description
+<p><%= @event.description %></p>
+durée
+<p><%= @event.duration %> ans</p>
+location
+<p><%= @event.location %></p>
+prix
+<p><%= @event.price%></p>
+créé par :
+<p><%= @event.admin.first_name%></p>
+<p><a href="/" class="btn btn-outline-warning">Retour à l'accueil</a></p>
+</div>
+
+<div class="container" style= "margin-bottom: 45px">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>📅  Date de début : <%=@event.start_date %></h3>
+      <h3>📍 Lieu : <%= @event.location %></h3>
+      <h3>⏱ Durée : <%=@event.duration %> minutes</h3>
+      <h3>💰 Prix : <%= @event.price %>€</h3>
+      <h3>❓ Description : <%= @event.description %></h3>
+      <% if current_user == @event.admin %>
+      <h3>👤 Orgnanisé par : Moi </h3>
+      <% else %>
+      <h3>👤 Orgnanisé par : <%= @event.admin.first_name %> <%= @event.admin.last_name %></h3>
+      <% end %>
+    </div>
+  </div>
+</div>
