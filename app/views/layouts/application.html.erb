@@ -33,25 +33,26 @@
 
         <div>
           <ul class="navbar-nav">
-            <% if current_user == nil %>
-              <li class="nav-item active ">
-                <a class="nav-link" href="/users/sign_in">Connexion<span class="sr-only ">(current)</span></a>
-              </li>
-              <li class="nav-item active ">
-                <a class="nav-link" href="/users/sign_up">S'inscrire<span class="sr-only ">(current)</span></a>
-              </li>
-            <%else%>
+            <% if user_signed_in? %>
+
               <li class="nav-item active ">
                 <a class="nav-link" href="/users/show">Mon profil<span class="sr-only ">(current)</span></a>
               </li>
               <li class="nav-item active ">
-                <a class="nav-item nav-link" <%= link_to "Se dÃŠconnecter", session_path(session.id), method: :delete %></a>
+                <a class="nav-item nav-link" <%= link_to "Déconnection", destroy_user_session_path, method: :delete %></a>
+              </li>
+
+            <%else%>
+              <li class="nav-item active ">
+                <a class="nav-link" <%= link_to "Connexion", new_user_session_path %><span class="sr-only ">(current)</span></a>
+              </li>
+              <li class="nav-item active ">
+                <a class="nav-link" <%= link_to "S'inscrire", new_user_registration_path %><span class="sr-only ">(current)</span></a>
               </li>
              <%end%>
           </ul>
         </div>
       </div>
-
     </nav>
 
     <%= yield %>
